@@ -21,7 +21,7 @@
                 <td>@product.Name</td>
                 <td>@product.Description</td>
                 <td>@product.Price</td>
-                <td><img src="@product.ImageUrl" alt="@product.Name" width="50"/></td>
+                <td><img src="@product.ImageUrl" alt="@product.Name" style="width: 50px; height:auto"/></td>
                 <td>
                     <a class="btn btn-warning" asp-action="Edit" asp-route-id="@product.Id">Edit</a>
                     <a class="btn btn-warning" asp-action="Delete" asp-route-id="@product.Id">Delete</a>

@@ -2,14 +2,21 @@
 
 <h1>Products</h1>
 <div>
-    @foreach (var product in Model)
+    @if (!Model.Any()) 
     {
-        <div class="product-card">
-            <img src="@product.ImageUrl" alt="@product.Name" />
-            <h2>@product.Name</h2>
-            <p>@product.Description</p>
-            <p>Price: @product.Price</p>
-            <button onclick="location.href='/checkout/@product.Id'">Buy Now</button>
-        </div>
+        <p>No products available at the moment.</p>
+    }
+    else 
+    {
+        foreach (var product in Model)
+        {
+            <div class="product-card">
+                <img src="@product.ImageUrl" alt="@product.Name" class="product-image" />
+                <h2>@product.Name</h2>
+                <p>@product.Description</p>
+                <p>Price: @product.Price</p>
+                <button onclick="location.href='/checkout/@product.Id'">Buy Now</button>
+            </div>
+        }
     }
 </div>

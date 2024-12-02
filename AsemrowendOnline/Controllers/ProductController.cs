@@ -14,10 +14,7 @@ namespace AsemrowendOnline.Controllers
         }
         public IActionResult Index()
         {
-            var products = new List<Product>
-            {
-                new Product { Id = 1, Name = "Product 1", Description = "Description 1", Price = 100, ImageUrl = "/images/product1.jpg"}
-            };
+            var products = _context.Products.ToList();
 
             return View(products);
         }
