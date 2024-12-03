@@ -21,17 +21,25 @@ namespace AsemrowendOnline.Controllers
         }
         public IActionResult Create()
         {
+            ViewBag.Categories = _context.Categories.ToList();
             return View();
         }
 
         // Create Product (POST)
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(Product product)
+        public IActionResult Create(Product product, int categoryId)
         {
             if (ModelState.IsValid)
             {
                 _context.Products.Add(product);
+                _context.SaveChanges();
+
+                _context.ProductCategories.Add(new ProductCategory
+                {
+                    ProductId = product.Id,
+                    CategoryId = categoryId
+                });
                 _context.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
