@@ -20,5 +20,11 @@
         <label for="ImageUrl">Image URL</label>
         <input type="text" class="form-control" asp-for="ImageUrl" />
     </div>
+    <div class="form-group">
+        <label for="Category">Category</label>
+        <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryList">
+            <option value="">-- Select a Category --</option>
+        </select>
+    </div>
     <button type="submit" class="btn btn-primary">Save Changes</button>
 </form>

@@ -12,6 +12,7 @@
             <th>Price</th>
             <th>Image</th>
             <th>Actions</th>
+            <th>Category</th>
         </tr>
     </thead>
     <tbody>
@@ -25,6 +26,9 @@
                 <td>
                     <a class="btn btn-warning" asp-action="Edit" asp-route-id="@product.Id">Edit</a>
                     <a class="btn btn-warning" asp-action="Delete" asp-route-id="@product.Id">Delete</a>
+                </td>
+                <td>
+                    @string.Join(",", product.ProductCategories?.Select(pc => pc.Category.Name) ?? Enumerable.Empty<string>())
                 </td>
             </tr>
         }

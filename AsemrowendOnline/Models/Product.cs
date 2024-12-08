@@ -16,8 +16,8 @@ namespace AsemrowendOnline.Models
         public string ImageUrl { get; set; }
         [Range(0, 100, ErrorMessage = "Discount must be between 0 and 100")]
         public decimal? Discount { get; set; }
-        
-        public ICollection<ProductCategory> ProductCategories { get; set; }
+        public int? CategoryId { get; set; }
 
+        public List<ProductCategory> ProductCategories { get; set; } = new List<ProductCategory>();
     }
 }
