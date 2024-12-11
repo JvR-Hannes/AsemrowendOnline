@@ -18,9 +18,13 @@ namespace AsemrowendOnline.Data
             modelBuilder.Entity<ProductCategory>()
                 .HasKey(pc => new { pc.ProductId, pc.CategoryId });
             modelBuilder.Entity<Category>().HasData(
-                new Category { Id = 1, Name = "Electronics" },
-                new Category { Id = 2, Name = "Clothing" },
-                new Category { Id = 3, Name = "Books" }
+                new Category { Id = 1, Name = "Silk Scrunchie" },
+                new Category { Id = 2, Name = "Cotton Scrunchie" },
+                new Category { Id = 3, Name = "Pongee Scrunchie" },
+                new Category { Id = 4, Name = "Printed Cotton Scrunchie" },
+                new Category { Id = 5, Name = "Printed Silk Scrunchie" },
+                new Category { Id = 6, Name = "Dutch Satin Scrunchie" },
+                new Category { Id = 7, Name = "Bow Hair Clip" }
                 );
         }
 

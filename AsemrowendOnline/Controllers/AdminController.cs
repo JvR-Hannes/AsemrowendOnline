@@ -1,11 +1,13 @@
 ﻿using AsemrowendOnline.Data;
 using AsemrowendOnline.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 namespace AsemrowendOnline.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
         private readonly OnlineShopDbContext _context;
