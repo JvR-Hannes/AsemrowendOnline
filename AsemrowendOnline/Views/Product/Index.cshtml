@@ -14,7 +14,7 @@
                 <img src="@product.ImageUrl" alt="@product.Name" class="product-image" />
                 <h2>@product.Name</h2>
                 <p>@product.Description</p>
-                <p>Price: @product.Price</p>
+                <p>Price: @product.Price.ToString("C", new System.Globalization.CultureInfo("en-ZA"))</p>
                 <button onclick="location.href='/checkout/@product.Id'">Buy Now</button>
             </div>
         }
